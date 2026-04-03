@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feedback</title>
+
+<link rel="stylesheet" href="css/feedback.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="assets/heart.png" alt="DermAI Logo">
+
+<span>DermAI</span>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="prediction.html">Prediction</a></li>
+<li><a href="history.html">History</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html" id="logoutBtn">Logout</a></li>
+
+</ul>
+
+</nav>
+<main>
+<section class="feedback">
+
+<h2>Share Your Feedback</h2>
+
+<p class="subtitle">
+Help us improve the AI Skin Disease Detection system.
+</p>
+
+
+<form id="feedbackForm">
+
+<label>Rate your experience</label>
+
+<div class="stars">
+
+<span data-value="1">★</span>
+<span data-value="2">★</span>
+<span data-value="3">★</span>
+<span data-value="4">★</span>
+<span data-value="5">★</span>
+
+</div>
+
+<input type="hidden" id="rating">
+
+<textarea
+id="comment"
+placeholder="Write your feedback..."
+required
+></textarea>
+
+<button type="submit">Submit Feedback</button>
+
+</form>
+
+</section>
+</main>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+
+<!-- COMPANY -->
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 DermAI. All rights reserved.</p>
+
+</div>
+
+</footer>
+
+<script src="js/feedback.js"></script>
+
+</body>
+</html>

@@ -5,9 +5,9 @@ const JWT=require('jsonwebtoken')
 //Register
 const registerController = async (req, res) => {
   try {
-    const { username, email, password, phone, location,answer} = req.body;
+    const { username, email, password, phone, location,latitude,longitude,answer} = req.body;
     //validation
-    if (!username || !email || !password || !answer) {
+    if (!username || !email || !password || !answer || !location) {
       return res.status(400).send({
         success: false,
         message: "Please Provide All Fields",
@@ -22,12 +22,14 @@ const registerController = async (req, res) => {
       });
     }
     //phone no
+    if(phone){
     if (phone.length!=10) {
       return res.status(400).send({
         success: false,
         message: "Please Provide valid phone number",
       });
     }
+  }
 
     //password
     if(password.length < 6){
@@ -68,7 +70,11 @@ const registerController = async (req, res) => {
       email,
       password:hashedpass,
       phone,
-      location,
+      location:{
+        address:location,
+        latitude,
+        longitude
+      },
       answer:hashedans
     });
     res.status(201).send({

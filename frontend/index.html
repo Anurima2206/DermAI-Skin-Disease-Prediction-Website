@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DermAI - Skin Disease Detection</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-heart-pulse"></i> DermAI
+</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<ul class="nav-links" id="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#how">How it Works</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a class="btn" href="signup.html">Get Started</a></li>
+</ul>
+
+</div>
+</header>
+
+
+<section class="hero">
+
+<div class="hero-slider">
+
+<div class="slide active">
+<div class="hero-content">
+<h1>AI Powered Skin Disease Detection</h1>
+<p>Upload a skin image and get instant AI prediction with remedies and nearby dermatologists.</p>
+<a href="signup.html" class="hero-btn">Try Prediction</a>
+</div>
+</div>
+
+<div class="slide">
+<div class="hero-content">
+<h1>Detect Skin Problems Early</h1>
+<p>Our intelligent AI helps identify common skin conditions quickly and safely.</p>
+<a href="signup.html" class="hero-btn">Start Diagnosis</a>
+</div>
+</div>
+
+</div>
+
+<div class="slider-dots">
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
+
+</section>
+
+
+<section id="features" class="features">
+
+<h2>Platform Features</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<i class="fa-solid fa-brain"></i>
+<h3>AI Detection</h3>
+<p>Deep learning model detects skin diseases instantly.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-user-doctor"></i>
+<h3>Nearby Doctors</h3>
+<p>Find dermatologists within 5km of your location.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-clock"></i>
+<h3>Prediction History</h3>
+<p>Track your previous predictions anytime.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-file-medical"></i>
+<h3>Medical Reports</h3>
+<p>Download AI generated reports.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="how" class="how">
+
+<h1>How It Works</h1>
+
+<div class="steps">
+
+<div class="step">
+<i class="fa-solid fa-upload"></i>
+<h3>Upload Image</h3>
+</div>
+
+<div class="step">
+<i class="fa-solid fa-brain"></i>
+<h3>AI Analysis</h3>
+</div>
+
+<div class="step">
+<i class="fa-solid fa-stethoscope"></i>
+<h3>Prediction Result</h3>
+</div>
+
+<div class="step">
+<i class="fa-solid fa-user-doctor"></i>
+<h3>Consult Doctors</h3>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<h2>Platform Usage Statistics</h2>
+
+<div class="charts">
+
+<div class="chart-box">
+<h3>Monthly Usage</h3>
+<canvas id="usagePie"></canvas>
+</div>
+
+<div class="chart-box">
+<h3>Platform Growth Over Years</h3>
+<canvas id="usageBar"></canvas>
+</div>
+
+</div>
+
+</section>
+
+<section class="case-studies">
+
+<h1>Case Studies</h1>
+
+<div class="case-grid">
+
+<div class="case-card">
+<h3>Early Detection of a Fungal Skin Infection</h3>
+<p>
+Case Study:
+A 24-year-old student uploaded an image of a persistent itchy rash on their arm using DermAI. The system predicted a possible fungal infection (ringworm) and recommended consulting a dermatologist.</p>
+<p>.</p>
+<p>Outcome:
+After visiting a nearby dermatologist suggested by the platform, the infection was confirmed and treated early, preventing further spread.
+</p>
+</div>
+
+<div class="case-card">
+<h3>Identifying Possible Eczema</h3>
+<p>Case Study:
+A working professional experiencing dry and irritated skin used DermAI to analyze a skin image. The system indicated possible eczema and suggested moisturizing care along with medical consultation.</p>
+<p>.</p>
+<p>Outcome:
+With proper treatment and lifestyle changes recommended by the dermatologist, the symptoms were successfully managed.</p>
+</div>
+
+<div class="case-card">
+<h3>Early Warning for Suspicious Mole</h3>
+<p>
+Case Study:
+A user uploaded an image of a mole that had recently changed in size and color. DermAI flagged the image as potentially suspicious and advised immediate medical consultation.</p>
+<p>.</p>
+<p>
+Outcome:
+The dermatologist detected early-stage melanoma, allowing timely treatment and preventing serious complications.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<h1>User Feedback</h1>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+<p>
+"DermAI made it incredibly easy to understand what might be causing my skin irritation. The image analysis was quick, and the platform also helped me find a nearby dermatologist within minutes. It’s a very useful tool for anyone concerned about their skin health."
+</p>
+
+<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+<span>Riya Sharma</span>
+
+</div>
+
+<div class="testimonial-card">
+
+<p>
+"I was unsure whether the rash on my hand required medical attention. After uploading an image on DermAI, the system suggested that it could be a fungal infection and recommended consulting a specialist. The process was simple, fast, and very informative."
+</p>
+
+<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+<span>Arjun Das</span>
+
+</div>
+
+<div class="testimonial-card">
+
+<p>
+"DermAI provides a great combination of AI-based analysis and practical healthcare guidance. The interface is clean and easy to navigate, and the nearby doctor feature makes it convenient to seek professional help when needed."
+</p>
+
+<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+<span>Sneha Patel</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>How accurate is the AI prediction?</span>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+The AI model is trained on dermatology datasets and provides high accuracy predictions. However, it should be used as a support tool and not a replacement for professional medical advice.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Can this replace a dermatologist?</span>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+No. The platform is designed to assist users with early detection and guidance. Always consult a certified dermatologist for diagnosis and treatment.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Is my uploaded image secure?</span>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+Yes. All images are processed securely and stored only for prediction history purposes.
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Is DermAI free?</span>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+Yes. DermAI provides all services for free.
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+
+<!-- COMPANY -->
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 DermAI. All rights reserved.</p>
+
+</div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -35,7 +35,7 @@ const getUserController = async (req, res) => {
 const updateUserController = async (req, res) => {
   try {
     // find user
-    const user = await userModel.findById({ _id: req.user.id });
+    const user = await userModel.findById(req.user.id );
     //validation
     if (!user) {
       return res.status(404).send({
@@ -46,11 +46,21 @@ const updateUserController = async (req, res) => {
     //update
     const { username, location, phone,answer } = req.body;
     if (username) user.username = username;
-    if (location) user.location = location;
-    if (phone) user.phone = phone;
+    if (location !== undefined) {
+    user.location.address = location;
+    }
+    if (phone){
+      if (phone.length!=10) {
+      return res.status(400).send({
+        success: false,
+        message: "Please Provide valid phone number",
+      });
+    }
+    user.phone = phone;
+  }
     if (answer){
     var salt = bcrypt.genSaltSync(10);
-    const hashedans= await bcrypt.hash(newPassword, salt);
+    const hashedans= await bcrypt.hash(answer, salt);
     user.answer = hashedans;
     }
     //save user

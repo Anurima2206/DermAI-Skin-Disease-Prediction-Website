@@ -18,16 +18,15 @@ const userSchema = new mongoose.Schema(
   phone: {
     type: String
   },
-  location: {
-    type: String
-  },
-  googleId: {
-    type: String
-  },
+  location:{
+  address:String,
+  latitude:Number,
+  longitude:Number
+},
   answer: {
       type: String,
       required: [true, "Asnwer is required"],
-    }
+  }
 },
 { timestamps: true }
 )

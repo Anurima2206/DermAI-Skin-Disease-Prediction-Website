@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Profile</title>
+
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="assets/heart.png" alt="DermAI Logo">
+
+<span>DermAI</span>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="prediction.html">Prediction</a></li>
+<li><a href="history.html">History</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="index.html" id="logoutBtn">Logout</a></li>
+
+</ul>
+
+</nav>
+<main>
+
+<section class="profile">
+
+<!-- MY PROFILE (READ ONLY) -->
+
+<div class="profile-card">
+
+<h3>My Profile</h3>
+
+<p><strong>Username:</strong> <span id="viewUsername"></span></p>
+
+<p><strong>Email:</strong> <span id="viewEmail"></span></p>
+
+<p><strong>Phone:</strong> <span id="viewPhone"></span></p>
+
+<p><strong>Location:</strong> <span id="viewLocation"></span></p>
+
+</div>
+
+<!-- MY MEDICAL DETAILS (READ ONLY) -->
+
+<div class="profile-card">
+
+<h3>My Medical Details</h3>
+<p><strong>Age:</strong> <span id="viewAge"></span></p>
+<p><strong>Gender:</strong> <span id="viewGender"></span></p>
+<p><strong>Skin Type:</strong> <span id="viewSkinType"></span></p>
+<p><strong>Allergies:</strong> <span id="viewAllergies"></span></p>
+<p><strong>Symptoms:</strong> <span id="viewSymptoms"></span></p>
+</div>
+
+<!-- UPDATE PROFILE -->
+
+<div class="profile-card">
+
+<h3>Update My Profile</h3>
+
+<form id="profileForm">
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="text" id="phone" placeholder="Phone">
+
+<input type="text" id="location" placeholder="Location">
+
+<button type="submit">Update</button>
+
+</form>
+
+</div>
+
+<!-- UPDATE Password -->
+<div class="profile-card">
+
+<h3>Update Password</h3>
+
+<form id="passwordForm">
+
+<input type="password" id="oldPass" placeholder="Current Password" required>
+
+<input type="password" id="newPass" placeholder="New Password" required>
+
+<button type="submit">Update Password</button>
+
+</form>
+
+</div>
+
+<!-- MEDICAL HISTORY -->
+
+<div class="profile-card">
+
+<h3>Update Medical Details</h3>
+
+<form id="medicalForm">
+
+<input type="positive number" id="age" placeholder="Age">
+
+<select id="gender">
+
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+
+</select>
+
+<input type="text" id="skinType" placeholder="Skin Type">
+<input type="string" id="allergies" placeholder="Allergies">
+<input type="string" id="symptoms" placeholder="Symptoms">
+
+<button type="submit" id="medicalBtn">
+Update
+</button>
+
+</form>
+
+</div>
+
+
+<!-- DELETE ACCOUNT -->
+
+<div class="danger">
+<button onclick="deleteProfile()">Delete My Account</button>
+
+</div>
+
+</section>
+</main>
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+
+<!-- COMPANY -->
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 DermAI. All rights reserved.</p>
+
+</div>
+
+</footer>
+
+<script src="js/profile.js"></script>
+
+</body>
+</html>

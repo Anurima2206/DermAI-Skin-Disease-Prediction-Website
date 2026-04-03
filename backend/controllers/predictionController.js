@@ -1,6 +1,9 @@
 const predictionModel=require("../models/predictionModel");
+const MedicalHistory = require("../models/medicalModel")
 const axios = require("axios");
 const generatePDF = require("../utils/pdfGenerator");
+const FormData = require("form-data");
+const fs = require("fs");
 
 //disease prediction
 const predictDiseaseController = async(req,res)=>{
@@ -12,12 +15,48 @@ try {
       })
     }
     const imagePath = req.file.path
-    // Fake ML response
-        const disease = "Melanositic Navi"
-        const confidence = 0.42
-        const advice = "Go to doctor asap"
 
-    const prediction = new predictionModel({
+    const medicalHistory = await MedicalHistory.findOne({
+    userId:req.user.id
+    })
+
+    //default values
+    let age = 25
+    let symptoms = "None"
+    let allergies = "None"
+    let gender = "None"
+    let skinType = "None"
+        
+    if(medicalHistory){
+      
+      age = medicalHistory.age ? Number(medicalHistory.age) : 25;
+      gender= medicalHistory.gender || "None";
+      skinType= medicalHistory.skinType || "None";
+      symptoms= medicalHistory.symptoms?.length ? medicalHistory.symptoms.join(", "): "None";
+      allergies = medicalHistory.allergies?.length ? medicalHistory.allergies.join(", "): "None";
+    }
+     
+    const formData = new FormData()
+    formData.append("image", fs.createReadStream(imagePath))
+    formData.append("symptoms", symptoms)
+    formData.append("age", age)
+    formData.append("allergies", allergies)
+    formData.append("gender", gender)
+    formData.append("skinType", skinType)
+
+    const mlResponse = await axios.post(
+      process.env.ML_API_URL,
+      formData,
+      {
+        headers: formData.getHeaders()
+      }
+    )
+
+      const disease = mlResponse.data.prediction_class
+      const confidence = mlResponse.data.confidence
+      const advice = mlResponse.data.ai_explanation.toString().replace(/\*\*/g, "");
+
+      const prediction = new predictionModel({
       userId: req.user.id,
       image: imagePath,
       disease,
@@ -26,13 +65,17 @@ try {
     })
 
     await prediction.save()
+
     res.json({
-      disease,
-      confidence,
-      advice
-    })
+  success:true,
+  predictionId: prediction._id,
+  prediction_class: disease,
+  confidence: confidence,
+  ai_explanation: advice
+  })
+
 } catch (error) {
-    console.log(error);
+    console.error("Prediction controller error:", error);
     res.status(500).send({
       success: false,
       message: "Error In predict disease API",
@@ -45,7 +88,7 @@ try {
 const predictionHistoryController = async (req, res) => {
   try {
     const predictions = await predictionModel.find({userId: req.user.id}).sort
-  ({ createdAt: -1 })
+  ({ createdAt: -1 });
    if (!predictions) {
       return res.status(404).json({
         success: false,
@@ -99,7 +142,12 @@ const downloadReportController = async(req,res)=>{
       message: "Prediction not found or unauthorized"
       })
     }
-  generatePDF(prediction,res);
+
+    /* fetch medical history */
+    const medicalHistory = await MedicalHistory.findOne({
+    userId:req.user.id
+    })
+  generatePDF(prediction,medicalHistory || {},res);
   
   } catch (error) {
     console.log(error);

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prediction History</title>
+
+<link rel="stylesheet" href="css/history.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="assets/heart.png" alt="DermAI Logo">
+
+<span>DermAI</span>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="prediction.html">Prediction</a></li>
+<li><a href="history.html">History</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html" id="logoutBtn">Logout</a></li>
+
+</ul>
+</nav>
+<main>
+<section class="history">
+<h1>Your Prediction History</h1>
+<p class="subtitle">
+View your previous skin disease predictions
+</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Image</th>
+<th>Disease</th>
+<th>Confidence</th>
+<th>Report</th>
+</tr>
+
+</thead>
+<tbody id="historyTable">
+</tbody>
+</table>
+
+<p id="noHistory" class="no-history"></p>
+
+</section>
+</main>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+
+<!-- COMPANY -->
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 DermAI. All rights reserved.</p>
+
+</div>
+</footer>
+
+<script src="js/history.js"></script>
+
+</body>
+</html>
