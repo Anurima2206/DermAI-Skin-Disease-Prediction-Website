@@ -1,5 +1,8 @@
 console.log("Prediction JS loaded");
 
+/* BACKEND BASE URL */
+const API_BASE = "https://skin-disease-prediction-website-1-lgkz.onrender.com";
+
 /* ELEMENT REFERENCES */
 
 const form = document.getElementById("predictionForm");
@@ -15,6 +18,7 @@ const token = localStorage.getItem("token");
 
 let selectedFile = null;
 let lastPredictionId = null;
+
 
 /* WARNING POPUP */
 
@@ -54,10 +58,12 @@ form.addEventListener("submit", predict);
 
 
 async function predict(event){
-   if(event){
+
+  if(event){
     event.preventDefault();
     event.stopPropagation();
   }
+
   console.log("Predict button clicked");
 
   const file = imageInput.files[0];
@@ -84,8 +90,9 @@ async function predict(event){
     const timer2 = setTimeout(()=>{
       loadingText.innerText = "Almost there...";
     },3000);
+
     const res = await fetch(
-      "http://localhost:8080/api/v1/predict/predictdisease",
+      `${API_BASE}/api/v1/predict/predictdisease`,
       {
         method:"POST",
         headers:{
@@ -98,12 +105,13 @@ async function predict(event){
     console.log("Response status:", res.status);
 
     if(!res.ok){
-       const text = await res.text();
+      const text = await res.text();
       console.log("Server error response:", text);
       throw new Error("Server returned error");
     }
 
     const data = await res.json();
+
     clearTimeout(timer1);
     clearTimeout(timer2);
 
@@ -115,8 +123,11 @@ async function predict(event){
 
   }
   catch(err){
-     loadingPopup.style.display = "none";
+
+    loadingPopup.style.display = "none";
+
     console.error("Prediction error:", err);
+
     alert("Prediction failed. Please try again.");
 
   }
@@ -127,17 +138,21 @@ async function predict(event){
 /* RESULT POPUP */
 
 function showResult(data){
+
   loadingPopup.style.display = "none";
+
   console.log("showResult called", data);
+
   const cleanedAdvice = data.ai_explanation.replace(/\*\*/g, "");
 
-    resultText.innerHTML = `
+  resultText.innerHTML = `
   <strong>Predicted Condition:</strong> ${data.prediction_class}<br><br>
   <strong>Confidence:</strong> ${(data.confidence * 100).toFixed(2)}%<br><br>
   <strong>Advice:</strong> ${cleanedAdvice}
   `;
 
   resultPopup.style.display = "flex";
+
 }
 
 
@@ -153,7 +168,7 @@ async function downloadReport(){
   try{
 
     const res = await fetch(
-      `http://localhost:8080/api/v1/predict/pdf/${lastPredictionId}`,
+      `${API_BASE}/api/v1/predict/pdf/${lastPredictionId}`,
       {
         headers:{
           Authorization:`Bearer ${token}`
@@ -166,17 +181,21 @@ async function downloadReport(){
     const url = window.URL.createObjectURL(blob);
 
     const a = document.createElement("a");
+
     a.href = url;
     a.download = "prediction-report.pdf";
 
     document.body.appendChild(a);
+
     a.click();
+
     a.remove();
 
   }
   catch(err){
 
     console.error("PDF download error:", err);
+
     alert("Failed to download report");
 
   }
@@ -189,7 +208,9 @@ async function downloadReport(){
 function clearImage(){
 
   imageInput.value = "";
+
   preview.src = "";
+
   preview.style.display = "none";
 
   selectedFile = null;
@@ -204,9 +225,11 @@ function clearImage(){
 function closeResult(){
 
   resultPopup.style.display = "none";
+
   clearImage();
 
 }
+
 
 /* CLOSE POPUP WHEN CLICK OUTSIDE */
 
@@ -215,6 +238,7 @@ resultPopup.addEventListener("click",(event)=>{
   if(event.target === resultPopup){
 
     resultPopup.style.display = "none";
+
     clearImage();
 
   }

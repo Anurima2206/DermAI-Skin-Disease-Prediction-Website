@@ -9,7 +9,7 @@ const password = document.getElementById("password").value
 
 try{
 
-const res = await fetch("http://localhost:8080/api/v1/auth/login",{
+const res = await fetch("https://skin-disease-prediction-website-1-lgkz.onrender.com/api/v1/auth/login",{
 
 method:"POST",
 
