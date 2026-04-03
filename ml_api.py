@@ -12,17 +12,12 @@ load_dotenv()
 
 app = FastAPI()
 
-# ----------------------------
-# Gemini API Setup
-# ----------------------------
 api_key = os.getenv("GEMINI_API_KEY")
+
 genai.configure(api_key=api_key)
 
 model_gen = genai.GenerativeModel("gemini-2.5-flash")
 
-# ----------------------------
-# Global ML variables
-# ----------------------------
 interpreter = None
 input_details = None
 output_details = None
@@ -41,9 +36,7 @@ classes = [
 ]
 
 
-# ----------------------------
-# Load model on startup
-# ----------------------------
+
 @app.on_event("startup")
 def load_model():
     global interpreter, input_details, output_details
@@ -61,9 +54,7 @@ def load_model():
     output_details = interpreter.get_output_details()
 
     print("✅ Model loaded successfully!")
-# ----------------------------
-# Image preprocessing
-# ----------------------------
+
 def preprocess_image(contents):
     img = Image.open(io.BytesIO(contents)).convert("RGB")
     img = img.resize((380, 380))
@@ -97,9 +88,6 @@ def generate_ai_response(predicted_class, symptoms, age, allergies, skinType):
     return response.text
 
 
-# ----------------------------
-# Prediction API
-# ----------------------------
 @app.post("/predict-image/")
 async def predict_image(
     image: UploadFile = File(...),
@@ -114,14 +102,12 @@ async def predict_image(
 
         print("📩 Request received")
 
-        # Safe defaults
         symptoms = symptoms or "None"
         age = age if age is not None else "Not provided"
         allergies = allergies or "None"
         gender = gender or "None"
         skinType = skinType or "Unknown"
 
-        # Read uploaded image
         contents = await image.read()
 
         img = preprocess_image(contents)
@@ -154,6 +140,7 @@ async def predict_image(
             allergies,
             skinType
         )
+        ai_answer=ai_answer.split("*")
 
         return {
             "prediction_class": predicted_class,
