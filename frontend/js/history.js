@@ -5,7 +5,7 @@ async function loadHistory(){
 try{
 
 const res = await fetch(
-"http://localhost:8080/api/v1/predict/predicthistory",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/predict/predicthistory",
 {
 headers:{
 Authorization:`Bearer ${token}`
@@ -34,7 +34,7 @@ row.innerHTML = `
 <td>${new Date(item.createdAt).toLocaleDateString()}</td>
 
 <td>
-<img src="http://localhost:8080/uploads/${imagePath}" width="60"/>
+<img src="https://skin-disease-prediction-website-1-nsua.onrender.com/uploads/${imagePath}" width="60"/>
 </td>
 
 <td>${item.disease}</td>
@@ -43,7 +43,7 @@ row.innerHTML = `
 
 <td>
 <a class="report-btn"
-href="http://localhost:8080/api/v1/predict/pdf/${item._id}"
+href="https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/predict/pdf/${item._id}"
 target="_blank">
 Download
 </a>

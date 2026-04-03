@@ -1,7 +1,8 @@
 console.log("Prediction JS loaded");
 
 /* BACKEND BASE URL */
-const API_BASE = "https://skin-disease-prediction-website-1-lgkz.onrender.com";
+const API_BASE = "https://skin-disease-prediction-website-1-nsua.onrender.com";
+
 
 /* ELEMENT REFERENCES */
 

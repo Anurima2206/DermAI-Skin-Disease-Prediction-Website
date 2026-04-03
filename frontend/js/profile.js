@@ -5,7 +5,7 @@ const token = localStorage.getItem("token")
 async function loadProfile(){
 
 const res = await fetch(
-"http://localhost:8080/api/v1/user/getuser",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/user/getuser",
 {
 headers:{
 Authorization:`Bearer ${token}`
@@ -50,7 +50,7 @@ const location = document.getElementById("location").value
 try{
 
 const res = await fetch(
-"http://localhost:8080/api/v1/user/updateuser",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/user/updateuser",
 {
 method:"POST",
 headers:{
@@ -99,7 +99,7 @@ const oldPassword = document.getElementById("oldPass").value
 const newPassword = document.getElementById("newPass").value
 
 const res = await fetch(
-"http://localhost:8080/api/v1/user/updatepass",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/user/updatepass",
 {
 method:"POST",
 headers:{
@@ -125,7 +125,7 @@ let medicalExists = false
 async function loadMedical(){
 
 const res = await fetch(
-"http://localhost:8080/api/v1/medical/get",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/medical/get",
 {
 headers:{
 Authorization:`Bearer ${token}`
@@ -176,8 +176,8 @@ const allergies = document.getElementById("allergies").value
 const symptoms = document.getElementById("symptoms").value
 
 const url = medicalExists
-? "http://localhost:8080/api/v1/medical/update"
-: "http://localhost:8080/api/v1/medical/create"
+? "https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/medical/update"
+: "https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/medical/create"
 
 const method = medicalExists ? "PUT" : "POST"
 
@@ -224,7 +224,7 @@ async function deleteProfile(){
 if(!confirm("Are you sure?")) return
 
 const res = await fetch(
-"http://localhost:8080/api/v1/user/deleteprofile",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/user/deleteprofile",
 {
 
 method:"DELETE",

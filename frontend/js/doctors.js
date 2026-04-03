@@ -5,7 +5,7 @@ async function loadDoctors(){
 try{
 
 const res = await fetch(
-"http://localhost:8080/api/v1/doctor/nearby",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/doctor/nearby",
 {
 headers:{
 Authorization:`Bearer ${token}`

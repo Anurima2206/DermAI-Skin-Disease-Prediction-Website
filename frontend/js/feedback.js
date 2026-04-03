@@ -46,7 +46,7 @@ return
 try{
 
 const res = await fetch(
-"http://localhost:8080/api/v1/feedback/submit",
+"https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/feedback/submit",
 {
 
 method:"POST",
