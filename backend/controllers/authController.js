@@ -30,7 +30,6 @@ const registerController = async (req, res) => {
       });
     }
   }
-
     //password
     if(password.length < 6){
       return res.status(400).send({

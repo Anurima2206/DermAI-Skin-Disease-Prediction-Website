@@ -1,52 +1,6 @@
 const Doctor = require("../models/doctorModel")
 const User = require("../models/userModel")
 
-/*const getNearbyDoctorsController = async (req,res)=>{
-  try{
-
-    console.log("USER ID:", req.user.id)
-
-    const user = await User.findById(req.user.id)
-
-    if(!user || !user.location){
-      return res.status(400).send({
-        success:false,
-        message:"User location not available"
-      })
-    }
-
-    const latitude = user.location.latitude
-    const longitude = user.location.longitude
-
-    console.log("LAT:", latitude)
-    console.log("LNG:", longitude)
-
-    const doctors = await Doctor.find({
-      specialization:"Dermatologist",
-      location:{
-        $near:{
-          $geometry:{
-            type:"Point",
-            coordinates:[longitude, latitude]
-          },
-          $maxDistance:5000
-        }
-      }
-    })
-
-    res.send({
-      success:true,
-      doctors
-    })
-
-  }catch(error){
-    console.log(error)
-    res.status(500).send({
-      success:false,
-      message:"Error fetching doctors"
-    })
-  }
-}*/
 
 const getNearbyDoctorsController = async (req,res)=>{
   try{
