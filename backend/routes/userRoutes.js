@@ -15,4 +15,5 @@ router.post("/updatepass",authMiddleware,updatePasswordController);
 
 //delete deleteprofile
 router.delete("/deleteprofile",authMiddleware,deleteProfileController);
+
 module.exports = router;

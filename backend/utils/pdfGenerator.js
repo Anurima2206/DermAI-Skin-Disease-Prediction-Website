@@ -13,7 +13,7 @@ const generatePDF = (prediction,medicalHistory, res) => {
 
   doc.pipe(res)
 
-  // RED HEADER BACKGROUND
+  
   doc
     .rect(19, 20, doc.page.width-38, 80)
     .fill("#178d91")
@@ -22,7 +22,7 @@ const generatePDF = (prediction,medicalHistory, res) => {
     doc.image(path.join(__dirname,"../../frontend/assets/heart.png"), 35, 35, { width: 35 })
     }catch(err){}
 
-  /* CONTACT INFO (LEFT SIDE) */
+  
 doc
 .fillColor("white")
 .font("Helvetica-Bold")
@@ -41,7 +41,7 @@ doc
   doc.x=50
   doc.y = 120
 
-  // REPORT TITLE
+  
   doc
     .fontSize(18)
     .font("Helvetica-Bold")
@@ -118,7 +118,7 @@ doc.fillColor("black")
 
   doc.fillColor("black")
 
-  // ⬛ PAGE BORDER
+  // PAGE BORDER
   doc
     .lineWidth(2)
     .rect(
