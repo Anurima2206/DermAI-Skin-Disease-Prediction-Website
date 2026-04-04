@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - DermAI</title>
+
+
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="assets/heart.png" alt="DermAI Logo">
+
+<span>DermAI</span>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="prediction.html">Prediction</a></li>
+<li><a href="history.html">History</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html" id="logoutBtn">Logout</a></li>
+
+</ul>
+
+</nav>
+<main></main>
+<div class="welcome">
+
+<h2 id="welcomeText">Welcome Back!</h2>
+</div>
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Detect Skin Problems Early</h1>
+
+<p>
+Upload a skin image and let our AI analyze possible skin diseases instantly.
+</p>
+
+<a href="prediction.html" class="hero-btn">Try Prediction</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="assets/dashboard.png" alt="AI Skin Detection">
+
+</div>
+
+</section>
+
+<!-- steps -->
+
+<section class="steps">
+
+<h2>How to Use DermAI</h2>
+
+<div class="steps-container">
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Upload Skin Image</h3>
+
+<p>Upload a clear image of the affected skin area for analysis.</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>AI Analysis</h3>
+
+<p>Our AI model analyzes the image to detect possible skin diseases.</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>View Prediction</h3>
+
+<p>Get disease prediction along with confidence score and insights.</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Consult Doctors</h3>
+
+<p>Find nearby dermatologists and download medical reports.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CHART SECTION -->
+ <section class="stats-section">
+<h2 class="stats-title">User Statistics</h2>
+<section class="charts-container">
+<div class="chart-card">
+
+<h2>Your Disease Distribution</h2>
+
+<canvas id="pieChart"></canvas>
+
+</div>
+
+
+<div class="chart-card">
+
+<h2>Monthly Usage</h2>
+
+<canvas id="barChart"></canvas>
+
+</div>
+</section>
+</section>
+
+<!-- Case studies -->
+
+<section class="case-studies">
+
+<h1>Case Studies</h1>
+
+<div class="cases">
+
+<div class="case">
+<h3>Early Melanoma Detection</h3>
+<p>AI detected melanoma early helping the patient receive treatment quickly.</p>
+</div>
+
+<div class="case">
+<h3>Eczema Identification</h3>
+<p>Model detected eczema with 94% confidence from uploaded image.</p>
+</div>
+
+<div class="case">
+<h3>Psoriasis Detection</h3>
+<p>Prediction was later confirmed by dermatologists.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Are the datas secured?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-answer">
+Personal datas are always kept confidential.Security of users is our first priority.
+</div>
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Can I download reports?</span>
+<span class="arrow">+</span>
+</div>
+
+<div class="faq-answer">
+Yes,once ML prediction is done,reports can be downloaded.
+</div>
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Is any payment required?</span>
+<span class="arrow">+</span>
+</div>
+
+<div class="faq-answer">
+No.DermAI provides free services to users.
+</div>
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Does it replace doctors?</span>
+<span class="arrow">+</span>
+</div>
+
+<div class="faq-answer">
+No. It only assists detection. Always consult dermatologists.
+</div>
+</div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- SUPPORT -->
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+
+<!-- COMPANY -->
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 DermAI. All rights reserved.</p>
+
+</div>
+
+</footer>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
+

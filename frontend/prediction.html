@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skin Disease Prediction</title>
+
+<link rel="stylesheet" href="css/prediction.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="assets/heart.png" alt="DermAI Logo">
+<span>DermAI</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="prediction.html">Prediction</a></li>
+<li><a href="history.html">History</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html" id="logoutBtn">Logout</a></li>
+</ul>
+
+</nav>
+
+<main>
+
+<!-- MAIN SECTION -->
+
+<section class="prediction-container">
+
+<!-- LEFT COLUMN -->
+
+<div class="left-section">
+
+<form id="predictionForm">
+
+<div class="upload-section">
+
+<h2>Upload Skin Image</h2>
+
+<p class="subtitle">
+Upload a clear image of the affected skin area for AI analysis.
+</p>
+
+<input type="file" id="image" style="display:none">
+
+<button type="button" onclick="showWarning()">Choose File</button>
+
+<span id="fileName">No file chosen</span>
+
+<img id="preview">
+
+<div class="buttons">
+
+<button type="submit">Analyse</button>
+
+<button type="button" class="clear-btn" onclick="clearImage()">
+Clear File
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<!-- MEDICAL DISCLAIMER -->
+
+<p class="medical-disclaimer">
+⚠ Medical Disclaimer: This AI system provides predictions based on machine learning
+and is not a substitute for professional medical diagnosis. Please consult a
+qualified dermatologist for accurate medical advice and treatment.
+</p>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+
+<div class="instruction-box">
+
+<h2>Image Upload Guidelines</h2>
+
+<ul>
+<li>Ensure the image is taken in good lighting.</li>
+<li>The skin area should be clearly visible.</li>
+<li>Avoid blurry or low-resolution images.</li>
+<li>Do not apply filters or edits.</li>
+<li>Capture the affected area closely.</li>
+<li>Ensure the image focuses on only one skin condition.</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- RESULT POPUP -->
+
+<div id="resultPopup">
+
+<div class="result-card">
+
+<p id="resultText"></p>
+
+<div class="result-buttons">
+
+<button onclick="downloadReport()">Download Report</button>
+
+<a href="feedback.html" class="feedback-btn">Share Feedback</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOADING POPUP -->
+<div id="loadingPopup" class="loading-popup">
+
+  <div class="loading-card">
+    <p id="loadingText">Prediction in progress...</p>
+  </div>
+
+</div>
+<!-- WARNING POPUP -->
+
+<div id="warningPopup">
+
+<div class="warning-card">
+
+<h3>⚠ Image Quality Warning</h3>
+
+<p>For accurate prediction please ensure:</p>
+
+<ul>
+<li>The image is clear and not blurred</li>
+<li>The affected skin area is visible</li>
+<li>The photo is taken in good lighting</li>
+<li>No filters or edits are applied</li>
+</ul>
+
+<button onclick="closeWarning()">I Understand</button>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="feedback.html">Submit Feedback</a></li>
+<li><a href="#">Report Issue</a></li>
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="#">About DermAI</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 DermAI. All rights reserved.</p>
+</div>
+
+</footer>
+
+<script src="js/prediction.js"></script>
+
+</body>
+</html>

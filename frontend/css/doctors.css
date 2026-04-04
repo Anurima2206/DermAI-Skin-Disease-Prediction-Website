@@ -1,0 +1,251 @@
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#dceff1;
+color:#333;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+main{
+flex:1;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:10px 8%;
+
+background:white;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.12);
+
+position:sticky;
+top:0;
+z-index:1000;
+max-height: 40px;
+
+}
+
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:36px;
+}
+
+.logo span{
+font-size:22px;
+font-weight:700;
+color:#1fa2a6;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:black;
+
+font-weight:500;
+
+padding-bottom:4px;
+
+transition:0.2s;
+
+}
+.nav-links a:hover{
+color:#2c7a7b;
+text-decoration: underline;
+}
+
+/* PAGE */
+.doctors{
+margin-left: 10px;
+padding:20px 8%;
+text-align:center;
+
+}
+.doctors h2{
+    margin-top: 5px;
+    color: #2c7a7b;
+}
+.doctors p{
+    margin-top: 1px;
+    color: #1fa2a6;
+}
+
+.subtext{
+color:#666;
+margin-bottom:30px;
+}
+
+
+/* GRID */
+
+.doctor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,315px));
+
+gap:20px;
+
+}
+
+
+/* CARD */
+
+.doctor-card{
+
+background:rgba(245, 245, 245, 0.73);
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+text-align:left;
+border: 2px solid #1b5253;
+
+}
+
+.doctor-card h3{
+margin:0 0 10px 0;
+}
+
+.doctor-card p{
+margin:5px 0;
+color:#555;
+font-size: 14px;
+}
+
+.doctor-card a{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:8px 15px;
+
+background:linear-gradient(45deg,#0e5d64,#2c7a7b);
+
+color:white;
+
+border-radius:5px;
+font-size: 14px;
+text-decoration:none;
+
+}
+.doctor-card a:hover{
+    text-decoration: underline;
+    background:linear-gradient(45deg,#07353a,#1b5253);
+transform:scale(1.05);
+}
+
+.doctor-img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+border: 1px solid rgb(179, 178, 178);
+}
+/* NO DOCTOR */
+
+.no-doctor{
+margin-top:30px;
+color:red;
+}
+
+/* FOOTER */
+.footer{
+background:linear-gradient(135deg,#0fa3b1,#2c7a7b);
+color:white;
+text-align:center;
+padding:5px;
+margin-top:40px;
+font-size:12px;
+
+}
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-col h3,
+.footer-col h4{
+margin-bottom:3px;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin:6px 0;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+}
+
+.footer-col a:hover{
+text-decoration:underline;
+}
+
+.footer-bottom{
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,0.3);
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.footer-social a{
+margin-left:15px;
+color:white;
+text-decoration:none;
+}
+
+@media (max-width:600px){
+
+.doctor-grid{
+grid-template-columns:1fr;
+}
+
+.doctor-card{
+width:90%;
+margin:auto;
+}
+
+}

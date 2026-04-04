@@ -1,0 +1,343 @@
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#dceff1;
+color:#0c7f8c;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+main{
+flex:1;
+}
+/* NAVBAR */
+
+.navbar{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:10px 8%;
+
+background:white;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.12);
+
+position:sticky;
+top:0;
+z-index:1000;
+max-height: 40px;
+
+}
+
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:36px;
+}
+
+.logo span{
+font-size:22px;
+font-weight:700;
+color:#1fa2a6;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:black;
+
+font-weight:500;
+
+padding-bottom:4px;
+
+transition:0.2s;
+
+}
+
+/* HOVER EFFECT */
+
+.nav-links a:hover{
+
+color:#2c7a7b;
+text-decoration: underline;
+
+}
+
+/* PAGE */
+
+.history{
+
+padding:40px 8%;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.subtitle{
+color:#666;
+margin-bottom:25px;
+}
+
+
+/* TABLE */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:rgba(245, 245, 245, 0.73);
+
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+border-radius:10px;
+
+overflow:hidden;
+font-size: 14px;
+
+}
+
+thead{
+
+background:linear-gradient(45deg,#0e5d64,#2c7a7b);
+color:white;
+
+}
+
+th,td{
+
+padding:12px;
+
+text-align:center;
+
+border-bottom:0.5px solid rgb(165, 162, 162);
+border-right:0.5px solid rgb(165, 162, 162);
+
+}
+
+tbody tr:hover{
+background:#fff;
+}
+
+
+/* IMAGE */
+
+td img{
+
+width:60px;
+
+height:60px;
+
+object-fit:cover;
+
+border-radius:8px;
+
+}
+
+
+/* BUTTON */
+
+.report-btn{
+
+padding:6px 12px;
+
+background:linear-gradient(45deg,#127881,#2e8284);
+
+color:white;
+
+border-radius:8px;
+
+text-decoration:none;
+font-size: 14px;
+
+}
+
+.report-btn:hover{
+background:linear-gradient(45deg,#2e8284,#127881);
+}
+
+
+/* EMPTY */
+
+.no-history{
+margin-top:20px;
+color:red;
+text-align:center;
+}
+/* FOOTER */
+.footer{
+background:linear-gradient(135deg,#0fa3b1,#2c7a7b);
+color:white;
+text-align:center;
+padding:5px;
+margin-top:auto;
+font-size:12px;
+
+}
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-col h3,
+.footer-col h4{
+margin-bottom:3px;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin:6px 0;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+}
+
+.footer-col a:hover{
+text-decoration:underline;
+}
+
+.footer-bottom{
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,0.3);
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.footer-social a{
+margin-left:15px;
+color:white;
+text-decoration:none;
+}
+
+/* ============================= */
+/* TABLET VIEW */
+/* ============================= */
+
+@media (max-width: 1024px){
+
+.history{
+padding:30px 5%;
+}
+
+table{
+font-size:14px;
+}
+
+td img{
+width:50px;
+height:50px;
+}
+
+}
+
+
+/* ============================= */
+/* MOBILE VIEW */
+/* ============================= */
+
+@media (max-width: 768px){
+
+.history h2{
+font-size:22px;
+text-align:center;
+}
+
+.subtitle{
+text-align:center;
+font-size:14px;
+}
+
+/* convert table to card layout */
+
+table,
+thead,
+tbody,
+th,
+td,
+tr{
+display:block;
+width:100%;
+}
+
+thead{
+display:none;
+}
+
+tr{
+background:white;
+margin-bottom:20px;
+border-radius:10px;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+td{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 0;
+border:none;
+font-size:14px;
+}
+
+/* labels before values */
+
+td:nth-child(1)::before{content:"Date";}
+td:nth-child(2)::before{content:"Image";}
+td:nth-child(3)::before{content:"Disease";}
+td:nth-child(4)::before{content:"Confidence";}
+td:nth-child(5)::before{content:"Report";}
+
+td::before{
+font-weight:bold;
+color:#444;
+}
+
+td img{
+width:60px;
+height:60px;
+border-radius:8px;
+}
+
+.report-btn{
+padding:6px 10px;
+font-size:13px;
+}
+
+}
