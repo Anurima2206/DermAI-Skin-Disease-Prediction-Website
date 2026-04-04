@@ -1,6 +1,5 @@
-/* =========================
-   MOBILE NAVBAR
-========================= */
+
+/* MOBILE NAVBAR */
 
 const toggle = document.getElementById("menu-toggle")
 const navLinks = document.getElementById("nav-links")
@@ -14,11 +13,6 @@ navLinks.classList.toggle("active")
 })
 
 }
-
-
-/* =========================
-   HERO SLIDER
-========================= */
 
 /* HERO SLIDER */
 
@@ -73,9 +67,7 @@ showSlide(index)
 })
 
 
-/* =========================
-   FAQ ACCORDION
-========================= */
+/* FAQ ACCORDION */
 
 const questions = document.querySelectorAll(".faq-question")
 
@@ -93,9 +85,7 @@ answer.style.display === "block" ? "none" : "block"
 })
 
 
-/* =========================
-   PIE CHART (LIVE)
-========================= */
+/* PIE CHART (LIVE) */
 
 const pieCanvas = document.getElementById("usagePie")
 
@@ -127,15 +117,11 @@ options:{
 responsive:true,
 maintainAspectRatio:false
 }
-
 })
-
 }
 
 
-/* =========================
-   BAR CHART (LIVE)
-========================= */
+/*  BAR CHART (LIVE) */
 
 const barCanvas = document.getElementById("usageBar")
 
@@ -182,9 +168,7 @@ beginAtZero:true
 }
 
 
-/* =========================
-   LIVE DATA UPDATE
-========================= */
+/* LIVE DATA UPDATE */
 
 setInterval(()=>{
 
@@ -200,24 +184,15 @@ Math.floor(Math.random()*30)+5,
 Math.floor(Math.random()*20)+5
 
 ]
-
 pieChart.update()
-
 }
-
 
 /* update bar chart */
 
 if(barChart){
-
 barChart.data.datasets[0].data = barChart.data.datasets[0].data.map(()=>{
-
 return Math.floor(Math.random()*5000)+200
-
 })
-
 barChart.update()
-
 }
-
 },1500)

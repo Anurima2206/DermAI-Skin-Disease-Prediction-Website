@@ -6,8 +6,6 @@ const ratingInput = document.getElementById("rating")
 let rating = 0
 
 
-/* STAR SELECTION */
-
 stars.forEach(star=>{
 
 star.addEventListener("click",()=>{

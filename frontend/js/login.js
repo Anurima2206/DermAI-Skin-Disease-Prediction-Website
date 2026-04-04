@@ -40,11 +40,7 @@ else{
 alert(data.message)
 
 }
-
 }catch(err){
-
 alert("Server error")
-
 }
-
 })

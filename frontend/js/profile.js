@@ -85,8 +85,6 @@ alert("Something went wrong while updating profile")
 
 }
 
-
-
 /* PASSWORD RESET */
 const passwordForm = document.getElementById("passwordForm")
 
@@ -150,12 +148,6 @@ document.getElementById("viewGender").innerText = m.gender || "-"
 document.getElementById("viewSkinType").innerText = m.skinType || "-"
 document.getElementById("viewAllergies").innerText = m.allergies?.join(", ") || "-"
 document.getElementById("viewSymptoms").innerText = m.symptoms?.join(", ") || "-"
-
-
-/* FORM VALUES */
-
-
-
 }
 
 }

@@ -52,15 +52,10 @@ Download
 `
 
 table.appendChild(row)
-
 })
-
 }catch(err){
-
 console.log(err)
-
 }
-
 }
 
 loadHistory()

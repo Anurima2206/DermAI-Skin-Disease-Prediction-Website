@@ -135,7 +135,6 @@ async function predict(event){
 
 }
 
-
 /* RESULT POPUP */
 
 function showResult(data){
@@ -155,7 +154,6 @@ function showResult(data){
   resultPopup.style.display = "flex";
 
 }
-
 
 /* DOWNLOAD REPORT */
 

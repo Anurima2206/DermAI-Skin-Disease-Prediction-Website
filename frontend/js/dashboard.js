@@ -55,8 +55,6 @@ const pieChart = new Chart(
   }
 );
 
-
-
 // BAR CHART DATA
 
 let monthlyData = [3, 5, 2, 6, 3, 6];
@@ -95,29 +93,20 @@ const barChart = new Chart(
   }
 );
 
-
-
-// LIVE SMOOTH UPDATE
-
 setInterval(() => {
 
-  // PIE CHART SMALL CHANGES
   diseaseData = diseaseData.map(v => {
     let change = Math.floor(Math.random() * 3) - 1;
     let newVal = v + change;
     return Math.max(5, newVal);
   });
 
-
-  // BAR CHART SMALL CHANGES
   monthlyData = monthlyData.map(v => {
     let change = Math.floor(Math.random() * 3) - 1;
     let newVal = v + change;
     return Math.max(2, newVal);
   });
 
-
-  // UPDATE CHARTS
   pieChart.data.datasets[0].data = diseaseData;
   barChart.data.datasets[0].data = monthlyData;
 

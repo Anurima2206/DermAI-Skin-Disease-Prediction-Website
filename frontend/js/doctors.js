@@ -34,7 +34,6 @@ data.doctors.forEach((doc,index)=>{
 const card = document.createElement("div")
 card.className = "doctor-card"
 
-// detect female names
 const femaleNames = ["Priyanka","Tanaya","Neha","Rituparna","Debolina"]
 
 let image = "assets/doctor1.jpg"  // default male
