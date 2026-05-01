@@ -15,7 +15,7 @@ const longitude = document.getElementById("longitude").value
 
 try{
 
-const res = await fetch("http://localhost:8080/api/v1/auth/register",{
+const res = await fetch("https://skin-disease-prediction-website-1-nsua.onrender.com/api/v1/auth/register",{
 
 method:"POST",
 
