@@ -92,16 +92,13 @@ async function predict(event){
       loadingText.innerText = "Almost there...";
     },3000);
 
-    const res = await fetch(
-      `${API_BASE}/api/v1/predict/predictdisease`,
-      {
-        method:"POST",
-        headers:{
-          Authorization:`Bearer ${token}`
-        },
-        body:formData
-      }
-    );
+    const res = await fetch(`${API_BASE}/predict-image/`, {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${token}`
+  },
+  body: formData
+});
 
     console.log("Response status:", res.status);
 
