@@ -1,7 +1,7 @@
 console.log("Prediction JS loaded");
 
 /* BACKEND BASE URL */
-const API_BASE = "https://skin-disease-prediction-website-1-nsua.onrender.com";
+const API_BASE = "https://dermai-skin-disease-prediction-website-1.onrender.com/";
 
 
 /* ELEMENT REFERENCES */
