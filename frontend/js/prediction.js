@@ -93,11 +93,11 @@ async function predict(event){
     },3000);
 
     const res = await fetch(
-      ${API_BASE}/api/v1/predict/predictdisease,
+      `${API_BASE}/api/v1/predict/predictdisease`,
       {
         method:"POST",
         headers:{
-          Authorization:Bearer ${token}
+          Authorization:`Bearer ${token}`
         },
         body:formData
       }
@@ -135,6 +135,7 @@ async function predict(event){
 
 }
 
+
 /* RESULT POPUP */
 
 function showResult(data){
@@ -155,6 +156,7 @@ function showResult(data){
 
 }
 
+
 /* DOWNLOAD REPORT */
 
 async function downloadReport(){
@@ -167,10 +169,10 @@ async function downloadReport(){
   try{
 
     const res = await fetch(
-      ${API_BASE}/api/v1/predict/pdf/${lastPredictionId},
+      `${API_BASE}/api/v1/predict/pdf/${lastPredictionId}`,
       {
         headers:{
-          Authorization:Bearer ${token}
+          Authorization:`Bearer ${token}`
         }
       }
     );
