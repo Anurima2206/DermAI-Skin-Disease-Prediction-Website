@@ -1,7 +1,7 @@
 console.log("Prediction JS loaded");
 
 /* BACKEND BASE URL */
-const API_BASE = "https://dermai-skin-disease-prediction-website.onrender.com";
+const API_BASE = "https://skin-disease-prediction-website-1-nsua.onrender.com";
 
 
 /* ELEMENT REFERENCES */
@@ -92,13 +92,16 @@ async function predict(event){
       loadingText.innerText = "Almost there...";
     },3000);
 
-    const res = await fetch(`${API_BASE}/predict-image/`, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${token}`
-  },
-  body: formData
-});
+    const res = await fetch(
+      ${API_BASE}/api/v1/predict/predictdisease,
+      {
+        method:"POST",
+        headers:{
+          Authorization:Bearer ${token}
+        },
+        body:formData
+      }
+    );
 
     console.log("Response status:", res.status);
 
@@ -164,10 +167,10 @@ async function downloadReport(){
   try{
 
     const res = await fetch(
-      `${API_BASE}/api/v1/predict/pdf/${lastPredictionId}`,
+      ${API_BASE}/api/v1/predict/pdf/${lastPredictionId},
       {
         headers:{
-          Authorization:`Bearer ${token}`
+          Authorization:Bearer ${token}
         }
       }
     );
